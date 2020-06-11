@@ -42,7 +42,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: [],
+  modules: ['@nuxt/content'],
   /*
    ** vuetify module configuration
    ** https://github.com/nuxt-community/vuetify-module
@@ -61,6 +61,13 @@ export default {
         //   error: colors.deepOrange.accent4,
         //   success: colors.green.accent3
         // }
+      }
+    }
+  },
+  content: {
+    markdown: {
+      prism: {
+        theme: 'prism-themes/themes/prism-material-oceanic.css'
       }
     }
   },
