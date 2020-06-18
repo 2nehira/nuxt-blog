@@ -1,20 +1,14 @@
 <template>
-  <v-content>
-    <v-container fluid>
-      <ul>
-        <li v-for="post in posts" :key="post.slug">
-          <postCard :post="post"></postCard>
-        </li>
-      </ul>
-    </v-container>
-  </v-content>
+  <v-container fluid>
+    <postsList :posts="posts"></postsList>
+  </v-container>
 </template>
 
 <script>
-import postCard from '@/components/postCard'
+import postsList from '@/components/postsList'
 export default {
   components: {
-    postCard
+    postsList
   },
   async asyncData({ $content }) {
     const posts = await $content('posts', { deep: true })
