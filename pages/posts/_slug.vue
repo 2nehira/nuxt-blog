@@ -1,9 +1,9 @@
 <template>
-  <v-container>
+  <v-container class="posts">
     <nuxt-link :to="name2category(post.category).url">{{
       post.category
     }}</nuxt-link>
-    <h2>{{ post.title }}</h2>
+    <h1>{{ post.title }}</h1>
     <nuxt-content :document="post" />
     <v-btn v-if="prev" :to="prev.path" nuxt text>&lt;{{ prev.title }}</v-btn>
     &nbsp;|
@@ -41,5 +41,8 @@ export default {
 .v-application code {
   background: none;
   box-shadow: none;
+}
+.posts {
+  background: #1e1e1e;
 }
 </style>
