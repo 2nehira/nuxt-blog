@@ -1,13 +1,12 @@
 import colors from 'vuetify/es5/util/colors'
-
 export default {
   mode: 'universal',
   /*
    ** Headers of the page
    */
   head: {
-    titleTemplate: '%s - ' + process.env.npm_package_name,
-    title: process.env.npm_package_name || '',
+    titleTemplate: '%s - ' + 'Blog',
+    title: 'blog' || '',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -30,7 +29,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: ['@/plugins/categories'],
   /*
    ** Nuxt.js dev-modules
    */
@@ -42,7 +41,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: [],
+  modules: ['@nuxt/content'],
   /*
    ** vuetify module configuration
    ** https://github.com/nuxt-community/vuetify-module
@@ -52,15 +51,25 @@ export default {
     theme: {
       dark: false,
       themes: {
-        // dark: {
-        //   primary: colors.blue.darken2,
-        //   accent: colors.grey.darken3,
-        //   secondary: colors.amber.darken3,
-        //   info: colors.teal.lighten1,
-        //   warning: colors.amber.base,
-        //   error: colors.deepOrange.accent4,
-        //   success: colors.green.accent3
-        // }
+        dark: {
+          primary: colors.blue.darken2,
+          accent: colors.grey.darken3,
+          secondary: colors.amber.darken3,
+          info: colors.teal.lighten1,
+          warning: colors.amber.base,
+          error: colors.deepOrange.accent4,
+          success: colors.green.accent3
+        }
+      }
+    }
+  },
+  content: {
+    markdown: {
+      prism: {
+        theme: 'prism-themes/themes/prism-atom-dark.css'
+        // theme: 'prism-themes/themes/prism-vsc-dark-plus.css'
+        // theme: 'prism-themes/themes/prism-dracula.css'
+        // theme: 'prism-themes/themes/prism-material-oceanic.css'
       }
     }
   },
@@ -72,5 +81,28 @@ export default {
      ** You can extend webpack config here
      */
     extend(config, ctx) {}
+  },
+  generate: {
+    async routes() {
+      const { $content } = require('@nuxt/content')
+      const posts = await $content('posts')
+        .only(['path'])
+        .fetch()
+      const postsPath = posts.map((post) => post.path)
+      const categories = await $content('config', 'categories').fetch()
+      const categoryPath = categories.categories.map((category) => category.url)
+      return [...postsPath, ...categoryPath]
+      // return posts.map((post) => post.path)
+      // return Promise.all([
+      //   const {$content} = require('@nuxt/content')
+      //   $content('posts', { deep: true }).fetch()
+      // ]).then(([posts]) => {
+      //   return [
+      //     ...posts.map((post) => {
+      //       return post.path
+      //     })
+      //   ]
+      // })
+    }
   }
 }

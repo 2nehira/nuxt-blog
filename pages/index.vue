@@ -1,5 +1,23 @@
-<template> <v-container fluid> </v-container> </template>
+<template>
+  <v-container fluid>
+    <postsList :posts="posts"></postsList>
+  </v-container>
+</template>
 
 <script>
-export default {}
+import postsList from '@/components/postsList'
+export default {
+  components: {
+    postsList
+  },
+  async asyncData({ $content }) {
+    const posts = await $content('posts', { deep: true })
+      // .only(['title', 'path', 'category', 'date', 'tags'])
+      .sortBy('date', 'desc')
+      .fetch()
+    return {
+      posts
+    }
+  }
+}
 </script>
