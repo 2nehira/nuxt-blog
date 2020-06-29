@@ -1,4 +1,19 @@
 {
     "categories":[
+        {
+            "name": "競プロ",
+            "slug": "kyopro",
+            "url": "/category/kyopro"
+        },
+        {
+            "name": "カテゴリー1",
+            "slug": "category1",
+            "url":"/category/category1"
+        },
+        {
+            "name": "カテゴリー2",
+            "slug": "category2",
+            "url": "/category/category2"
+        }
     ]
 }
