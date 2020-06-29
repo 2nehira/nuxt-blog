@@ -21,7 +21,9 @@
     </v-navigation-drawer>
 
     <v-app-bar app clipped-right>
-      <v-toolbar-title>Blog</v-toolbar-title>
+      <v-toolbar-title
+        ><nuxt-link class="top-title" to="/">Blog</nuxt-link></v-toolbar-title
+      >
       <v-spacer></v-spacer>
       <v-toolbar-items>
         <v-btn to="/" nuxt>Home</v-btn>
@@ -60,3 +62,10 @@ export default {
   }
 }
 </script>
+
+<style>
+a.top-title {
+  color: black;
+  text-decoration: none;
+}
+</style>
