@@ -34,6 +34,11 @@ export default {
   },
   computed: {
     ...mapGetters(['name2category'])
+  },
+  head() {
+    return {
+      title: this.post.title
+    }
   }
 }
 </script>
@@ -43,6 +48,7 @@ export default {
   box-shadow: none;
 }
 .posts {
-  background: #1e1e1e;
+  /* background: #1e1e1e; */
+  background: #252525;
 }
 </style>
