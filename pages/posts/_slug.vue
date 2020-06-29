@@ -1,5 +1,6 @@
 <template>
   <v-container class="posts">
+    <h2>{{ post.slug }}</h2>
     <nuxt-link :to="name2category(post.category).url">{{
       post.category
     }}</nuxt-link>
@@ -49,6 +50,6 @@ export default {
 }
 .posts {
   /* background: #1e1e1e; */
-  background: #252525;
+  /* background: #252525; */
 }
 </style>
