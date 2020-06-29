@@ -65,7 +65,7 @@ export default {
 
 <style>
 a.top-title {
-  color: black;
-  text-decoration: none;
+  color: black !important;
+  text-decoration: none !important;
 }
 </style>
