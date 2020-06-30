@@ -1,6 +1,5 @@
 <template>
   <v-container class="posts">
-    <h2>{{ post.slug }}</h2>
     <nuxt-link :to="name2category(post.category).url">{{
       post.category
     }}</nuxt-link>
@@ -38,7 +37,20 @@ export default {
   },
   head() {
     return {
-      title: this.post.title
+      title: this.post.title,
+      meta: [
+        { hid: 'og:title', property: 'og:title', content: this.post.title },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: this.post.description
+        },
+        {
+          hid: 'og:url',
+          property: 'og:url',
+          content: 'https://blog.tunehira.net/' + this.post.path
+        }
+      ]
     }
   }
 }
