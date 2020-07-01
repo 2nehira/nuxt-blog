@@ -14,7 +14,7 @@
     "webserver": "http-server ./dist -o -p 8888"
   },
   "dependencies": {
-    "@nuxt/content": "^1.3.2",
+    "@nuxt/content": "^1.4.0",
     "@nuxtjs/sitemap": "^2.4.0",
     "nuxt": "^2.0.0",
     "prism-themes": "^1.4.0"
