@@ -37,7 +37,7 @@ export default {
       //   content: process.env.npm_package_description || ''
       // }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
   /*
    ** Customize the progress-bar color
@@ -68,7 +68,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxt/content'],
+  modules: ['@nuxt/content', '@nuxtjs/sitemap'],
   /*
    ** vuetify module configuration
    ** https://github.com/nuxt-community/vuetify-module
@@ -98,6 +98,21 @@ export default {
         // theme: 'prism-themes/themes/prism-dracula.css'
         // theme: 'prism-themes/themes/prism-material-oceanic.css'
       }
+    }
+  },
+  sitemap: {
+    hostname: 'https://blog.tunehira.net',
+    gzip: true,
+    exclude: [],
+    routes: async () => {
+      const { $content } = require('@nuxt/content')
+      const posts = await $content('posts')
+        .only(['path'])
+        .fetch()
+      const postsPath = posts.map((post) => post.path)
+      const categories = await $content('config', 'categories').fetch()
+      const categoryPath = categories.categories.map((category) => category.url)
+      return [...postsPath, ...categoryPath]
     }
   },
   /*
