@@ -1,6 +1,7 @@
 import colors from 'vuetify/es5/util/colors'
 export default {
   mode: 'universal',
+  target: 'static',
   /*
    ** Headers of the page
    */
@@ -26,7 +27,7 @@ export default {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: 'https://blog.tunehira.net/favicon.png'
+        content: 'https://blog.tunehira.net/ogp.png'
       },
       { hid: 'twitter:card', name: 'twitter:card', content: 'summary' },
       { hid: 'twitter:site', name: 'twitter:site', content: '@2nehira' }
