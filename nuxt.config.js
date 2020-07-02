@@ -27,7 +27,7 @@ export default {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: 'https://blog.tunehira.net/favicon.png'
+        content: 'https://blog.tunehira.net/ogp.png'
       },
       { hid: 'twitter:card', name: 'twitter:card', content: 'summary' },
       { hid: 'twitter:site', name: 'twitter:site', content: '@2nehira' }
