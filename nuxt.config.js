@@ -69,7 +69,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxt/content', '@nuxtjs/sitemap'],
+  modules: ['@nuxt/content', '@nuxtjs/sitemap', '@nuxtjs/feed'],
   /*
    ** vuetify module configuration
    ** https://github.com/nuxt-community/vuetify-module
@@ -116,6 +116,41 @@ export default {
       return [...postsPath, ...categoryPath]
     }
   },
+  // reference https://github.com/nuxt-community/feed-module#feed-create-function
+  feed: [
+    {
+      path: '/feed.xml',
+      async create(feed) {
+        feed.options = {
+          title: 'Blog',
+          link: 'https://blog.tunehira.net/feed.xml',
+          description: 'This is My blog'
+        }
+        const { $content } = require('@nuxt/content')
+        const posts = await $content('posts').fetch()
+        const baseArticlesUrl = 'https://tunehira.net'
+        posts.forEach((post) => {
+          const url = baseArticlesUrl + post.path
+          feed.addItem({
+            title: post.title,
+            id: url,
+            link: url,
+            date: new Date(post.date),
+            description: post.description,
+            content: post.description
+          })
+        })
+        feed.addCategory('Blog')
+        feed.addContributor({
+          name: 'tunehira',
+          link: 'https://blog.tunehira.net'
+        })
+      },
+      cacheTime: 1000 * 60 * 15,
+      type: 'rss2',
+      data: []
+    }
+  ],
   /*
    ** Build configuration
    */
