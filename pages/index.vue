@@ -1,6 +1,6 @@
 <template>
   <v-container fluid>
-    <postsList :posts="posts"></postsList>
+    <postsList :posts="posts" />
   </v-container>
 </template>
 

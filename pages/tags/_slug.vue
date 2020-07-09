@@ -1,5 +1,6 @@
 <template>
   <v-container fluid>
+    <breadcrumbs :add-items="addBread" />
     <h2>{{ slug }}</h2>
     <postsList :posts="posts"></postsList>
   </v-container>
@@ -7,10 +8,12 @@
 
 <script>
 import postsList from '@/components/postsList'
+import breadcrumbs from '@/components/breadcrumbs'
 // import { associateTagPosts } from '@/util/index'
 export default {
   components: {
-    postsList
+    postsList,
+    breadcrumbs
   },
   async asyncData({ $content, params, error }) {
     const posts = await $content('posts')
@@ -22,6 +25,21 @@ export default {
     return {
       posts,
       slug
+    }
+  },
+  computed: {
+    addBread() {
+      return [
+        {
+          icon: 'mdi-format-list-bulleted',
+          text: 'タグ一覧',
+          to: '/tags',
+          exact: true
+        },
+        {
+          text: this.slug
+        }
+      ]
     }
   }
 }

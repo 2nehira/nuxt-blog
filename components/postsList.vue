@@ -10,7 +10,7 @@
         lg="3"
         xl="2"
       >
-        <postCard :post="post"></postCard>
+        <postCard :post="post" />
       </v-col>
     </v-row>
   </v-container>

@@ -1,5 +1,6 @@
 <template>
   <v-container>
+    <breadcrumbs :add-items="addBread" />
     <h2>カテゴリー一覧</h2>
     --------------------------<br />
     <v-container fluid>
@@ -13,10 +14,22 @@
 </template>
 
 <script>
+import breadcrumbs from '@/components/breadcrumbs'
 export default {
+  components: {
+    breadcrumbs
+  },
   data() {
     return {
-      categories: this.$store.state.categories
+      categories: this.$store.state.categories,
+      addBread: [
+        {
+          icon: 'mdi-format-list-bulleted',
+          text: 'カテゴリー一覧',
+          to: '/category',
+          exact: false
+        }
+      ]
     }
   }
 }

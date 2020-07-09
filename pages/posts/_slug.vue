@@ -1,8 +1,6 @@
 <template>
   <v-container class="posts">
-    <nuxt-link :to="name2category(post.category).url">{{
-      post.category
-    }}</nuxt-link>
+    <breadcrumbs :add-items="addBread" />
     <h1>{{ post.title }}</h1>
     <nuxt-content :document="post" />
     <v-btn v-if="prev" :to="prev.path" nuxt text>&lt;{{ prev.title }}</v-btn>
@@ -13,7 +11,11 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import breadcrumbs from '@/components/breadcrumbs'
 export default {
+  components: {
+    breadcrumbs
+  },
   async asyncData({ $content, params, error }) {
     let post
     try {
@@ -35,7 +37,17 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['name2category'])
+    ...mapGetters(['name2category']),
+    addBread() {
+      return [
+        {
+          icon: 'mdi-folder-outline',
+          text: this.post.category,
+          to: this.name2category(this.post.category).url,
+          exact: true
+        }
+      ]
+    }
   },
   head() {
     return {
