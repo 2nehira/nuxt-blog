@@ -18,7 +18,9 @@
 import { createTagList } from '@/util/index'
 export default {
   async asyncData({ $content, params, error }) {
-    const posts = await $content('posts').fetch()
+    const posts = await $content('posts')
+      .only(['tags'])
+      .fetch()
     const tags = createTagList(posts)
     return {
       tags

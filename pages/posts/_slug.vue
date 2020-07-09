@@ -17,7 +17,9 @@ export default {
   async asyncData({ $content, params, error }) {
     let post
     try {
-      post = await $content('posts', params.slug).fetch()
+      post = await $content('posts', params.slug)
+        .only(['title', 'slug', 'category', 'tags', 'date', 'body'])
+        .fetch()
     } catch (e) {
       error({ message: 'Post not found' })
     }
