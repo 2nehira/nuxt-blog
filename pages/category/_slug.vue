@@ -1,16 +1,17 @@
 <template>
   <v-container>
-    <nuxt-link to="/">Home</nuxt-link>
-    <nuxt-link :to="category.url">{{ category.name }}</nuxt-link>
+    <breadcrumbs :add-items="addBread" />
     <postsList :posts="posts"></postsList>
   </v-container>
 </template>
 
 <script>
 import postsList from '@/components/postsList'
+import breadcrumbs from '@/components/breadcrumbs'
 export default {
   components: {
-    postsList
+    postsList,
+    breadcrumbs
   },
   async asyncData({ $content, params, error }) {
     const categories = (await $content('config', 'categories').fetch())
@@ -36,6 +37,22 @@ export default {
     return {
       posts,
       category
+    }
+  },
+  computed: {
+    addBread() {
+      return [
+        {
+          icon: 'mdi-format-list-bulleted',
+          text: 'カテゴリー一覧',
+          to: '/category',
+          exact: true
+        },
+        {
+          icon: 'mdi-forlder-outline',
+          text: this.category.name
+        }
+      ]
     }
   }
 }
