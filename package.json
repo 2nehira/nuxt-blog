@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@nuxt/content": "^1.4.0",
+    "@nuxtjs/feed": "^2.0.0",
     "@nuxtjs/sitemap": "^2.4.0",
     "nuxt": "^2.13.2",
     "prism-themes": "^1.4.0"
