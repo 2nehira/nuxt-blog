@@ -28,6 +28,7 @@ export default {
       posts = await $content('posts')
         .sortBy('date', 'desc')
         .where({ category: category.name })
+        .only(['title', 'path', 'date', 'category', 'tags'])
         .fetch()
     } catch (e) {
       error({ message: 'Post not found' })
