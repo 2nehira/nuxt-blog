@@ -29,7 +29,11 @@
         <v-btn to="/" nuxt>Home</v-btn>
         <v-btn to="/category" nuxt>カテゴリー</v-btn>
         <v-btn to="/tags" nuxt>タグ</v-btn>
-        <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+        <!-- aria-label をつけて light house で Buttons do not have an accessible nameが出ないようにしてる -->
+        <v-app-bar-nav-icon
+          aria-label="nav-icon"
+          @click.stop="drawer = !drawer"
+        ></v-app-bar-nav-icon>
       </v-toolbar-items>
     </v-app-bar>
 

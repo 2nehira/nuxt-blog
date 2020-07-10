@@ -20,7 +20,15 @@ export default {
     let post
     try {
       post = await $content('posts', params.slug)
-        .only(['title', 'slug', 'category', 'tags', 'date', 'body'])
+        .only([
+          'title',
+          'description',
+          'slug',
+          'category',
+          'tags',
+          'date',
+          'body'
+        ])
         .fetch()
     } catch (e) {
       error({ message: 'Post not found' })
@@ -54,6 +62,11 @@ export default {
       title: this.post.title,
       meta: [
         { hid: 'og:title', property: 'og:title', content: this.post.title },
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.post.description
+        },
         {
           hid: 'og:description',
           property: 'og:description',
