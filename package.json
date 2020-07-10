@@ -11,7 +11,6 @@
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lintfix": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
-    "webserver": "http-server ./dist -o -p 8888",
     "export": "nuxt export",
     "serve": "nuxt serve",
     "test": "jest"
@@ -37,7 +36,6 @@
     "eslint-plugin-nuxt": ">=0.4.2",
     "eslint-plugin-prettier": "^3.1.2",
     "jest": "^26.0.1",
-    "http-server": "^0.12.3",
     "prettier": "^1.19.1",
     "vue-jest": "^3.0.4"
   }
