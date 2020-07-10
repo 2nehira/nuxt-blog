@@ -8,9 +8,13 @@ export default {
   head: {
     titleTemplate: '%s - ' + 'Blog',
     title: 'blog' || '',
+    htmlAttrs: {
+      lang: 'ja'
+    },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { hid: 'description', name: 'description', content: 'tunehiraのブログ' },
       { hid: 'og:site_name', property: 'og:site_name', content: 'Blog' },
       { hid: 'og:type', property: 'og:type', content: 'website' },
       {
@@ -31,12 +35,6 @@ export default {
       },
       { hid: 'twitter:card', name: 'twitter:card', content: 'summary' },
       { hid: 'twitter:site', name: 'twitter:site', content: '@2nehira' }
-
-      // {
-      //   hid: 'description',
-      //   name: 'description',
-      //   content: process.env.npm_package_description || ''
-      // }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
