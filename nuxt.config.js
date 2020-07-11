@@ -52,7 +52,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['@/plugins/categories'],
+  plugins: [],
   /*
    ** Nuxt.js dev-modules
    */

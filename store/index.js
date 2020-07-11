@@ -24,8 +24,10 @@ export const mutations = {
 }
 
 export const actions = {
-  nuxtServerInit({ commit }, { req }) {},
-  async fetchCategories({ commit, state }) {
+  async nuxtServerInit({ dispatch }) {
+    await dispatch('fetchCategories')
+  },
+  async fetchCategories({ commit }) {
     const categories = (await this.$content('config', 'categories').fetch())
       .categories
     commit('setCategories', categories)
