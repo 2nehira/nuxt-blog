@@ -20,7 +20,9 @@
     "@nuxtjs/feed": "^2.0.0",
     "@nuxtjs/sitemap": "^2.4.0",
     "nuxt": "^2.13.2",
-    "prism-themes": "^1.4.0"
+    "prism-themes": "^1.4.0",
+    "rehype-katex": "^3.0.0",
+    "remark-math": "^2.0.1"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^2.0.0",

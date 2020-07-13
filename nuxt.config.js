@@ -38,6 +38,10 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'stylesheet',
+        href: 'https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/katex.min.css'
+      },
       { rel: 'alternate', type: 'application/rss+xml', href: '/feed.xml' }
     ]
   },
@@ -94,6 +98,8 @@ export default {
   },
   content: {
     markdown: {
+      remarkPlugins: ['remark-math'],
+      rehypePlugins: ['rehype-katex'],
       prism: {
         theme: 'prism-themes/themes/prism-atom-dark.css'
         // theme: 'prism-themes/themes/prism-vsc-dark-plus.css'
