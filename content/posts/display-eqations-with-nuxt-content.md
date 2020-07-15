@@ -1,7 +1,7 @@
 ---
 title: "@nuxt/content で数式を表示する"
 description: "@nuxt/content で remark-math と rehype-katexを使って数式表示してみました。"
-category: 競プロ
+category: development
 tags: [Nuxt, "@nuxt/content"]
 date: 2020-07-16
 ---

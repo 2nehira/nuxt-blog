@@ -101,10 +101,11 @@ export default {
       remarkPlugins: ['remark-math'],
       rehypePlugins: ['rehype-katex'],
       prism: {
-        theme: 'prism-themes/themes/prism-atom-dark.css'
+        // theme: 'prism-themes/themes/prism-atom-dark.css'
         // theme: 'prism-themes/themes/prism-vsc-dark-plus.css'
         // theme: 'prism-themes/themes/prism-dracula.css'
         // theme: 'prism-themes/themes/prism-material-oceanic.css'
+        // theme: 'prism-themes/themes/prism-nord.css'
       }
     }
   },

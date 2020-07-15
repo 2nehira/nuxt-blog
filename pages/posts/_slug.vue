@@ -11,7 +11,10 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import Prism from 'prismjs'
 import breadcrumbs from '@/components/breadcrumbs'
+import 'prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard.js'
+import 'prismjs/components/prism-markdown.min.js'
 export default {
   components: {
     breadcrumbs
@@ -57,6 +60,9 @@ export default {
       ]
     }
   },
+  mounted() {
+    Prism.highlightAll()
+  },
   head() {
     return {
       title: this.post.title,
@@ -90,5 +96,8 @@ export default {
 .posts {
   /* background: #1e1e1e; */
   /* background: #252525; */
+}
+.nuxt-content p {
+  white-space: pre-wrap;
 }
 </style>
