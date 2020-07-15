@@ -4,6 +4,11 @@
             "name": "競プロ",
             "slug": "kyopro",
             "url": "/category/kyopro"
+        },
+        {
+            "name": "development",
+            "slug": "development",
+            "url" : "/category/development"
         }
     ]
 }

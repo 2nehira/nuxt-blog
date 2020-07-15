@@ -3,6 +3,10 @@
         "source.fixAll.eslint": true
     },
     "[vue]": {
-    "editor.formatOnSave": false
+        "editor.formatOnSave": false
+    },
+    "[markdown]":{
+        "editor.tabSize": 2,
     }
+
 }
