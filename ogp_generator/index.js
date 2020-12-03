@@ -19,17 +19,27 @@ const ogpGenerateAll = () =>{
         ogpImageGenerater(title, site_name, save_image_path);
     }
 }
-
 const setBackground = (ctx) =>{
-    ctx.fillStyle = 'gray';
+    ctx.fillStyle = 'white';
     ctx.fillRect(0, 0, img_width, img_height);
+
+    ctx.lineWidth = 10;
+    const pad = 80;
+
+    const rect_size = 55;
+    const circle_size = 50;
+    // ctx.strokeStyle = 'blue';
+    ctx.strokeRect(pad-rect_size/2, pad-rect_size/2, rect_size, rect_size);
+    ctx.strokeRect(img_width-pad-rect_size/2, img_height-pad-rect_size/2, rect_size, rect_size);
+    // 大きい四角
+    ctx.strokeRect(pad, pad, img_width-pad*2, img_height-pad*2);
 }
 
 const setSiteName = (ctx, site_name) =>{
     ctx.fillStyle = 'black';
     ctx.font = '40px Arial';
     const text = ctx.measureText(site_name);
-    ctx.fillText(site_name, (img_width-text.width)/2, 100);
+    ctx.fillText(site_name, (img_width-text.width)/2, 150);
 }
 
 const setTitle = (ctx, title) =>{
@@ -40,7 +50,7 @@ const setTitle = (ctx, title) =>{
     // 一行に収まるなら一行で描画
     if(text.width + 2 * padding <= img_width){
         const sx = (img_width - text.width) / 2;
-        const sy = 300;
+        const sy = img_height / 2;
         ctx.fillText(title, sx, sy);
         return;
     }
