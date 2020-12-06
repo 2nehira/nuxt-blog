@@ -22,17 +22,7 @@ export default {
   async asyncData({ $content, params, error }) {
     let post
     try {
-      post = await $content('posts', params.slug)
-        .only([
-          'title',
-          'description',
-          'slug',
-          'category',
-          'tags',
-          'date',
-          'body'
-        ])
-        .fetch()
+      post = await $content('posts', params.slug).fetch()
     } catch (e) {
       error({ message: 'Post not found' })
     }
@@ -81,12 +71,12 @@ export default {
         {
           hid: 'og:url',
           property: 'og:url',
-          content: 'https://blog.tunehira.net/' + this.post.path
+          content: 'https://blog.tunehira.net' + this.post.path
         },
         {
           hid: 'og:image',
           property: 'og:image',
-          content: 'https://blog.tunehira.net/ogp/' + this.post.path + '.png'
+          content: 'https://blog.tunehira.net/ogp/' + this.post.slug + '.png'
         },
         {
           hid: 'twitter:card',
