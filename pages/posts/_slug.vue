@@ -82,6 +82,16 @@ export default {
           hid: 'og:url',
           property: 'og:url',
           content: 'https://blog.tunehira.net/' + this.post.path
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: 'https://blog.tunehira.net/ogp/' + this.post.path + '.png'
+        },
+        {
+          hid: 'twitter:card',
+          name: 'twitter:card',
+          content: 'summary_large_image'
         }
       ]
     }
