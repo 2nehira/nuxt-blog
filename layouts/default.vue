@@ -20,15 +20,14 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar app clipped-right>
+    <v-app-bar app clipped-right color="secondary" dark>
       <v-toolbar-title
         ><nuxt-link class="top-title" to="/">Blog</nuxt-link></v-toolbar-title
       >
       <v-spacer></v-spacer>
       <v-toolbar-items>
-        <v-btn to="/" nuxt>Home</v-btn>
-        <v-btn to="/category" nuxt>カテゴリー</v-btn>
-        <v-btn to="/tags" nuxt>タグ</v-btn>
+        <v-btn to="/category" nuxt color="secondary">カテゴリー</v-btn>
+        <v-btn to="/tags" nuxt color="secondary">タグ</v-btn>
         <!-- aria-label をつけて light house で Buttons do not have an accessible nameが出ないようにしてる -->
         <v-app-bar-nav-icon
           aria-label="nav-icon"
@@ -45,7 +44,7 @@
       </v-container>
     </v-main>
 
-    <v-footer app>
+    <v-footer color="background">
       <span>&copy; 2020. tunehira All rights reserved</span>
     </v-footer>
   </v-app>
@@ -60,16 +59,16 @@ export default {
     categories() {
       return this.$store.state.categories
     }
-  },
-  created() {
-    this.$vuetify.theme.dark = false
   }
+  // created() {
+  //   this.$vuetify.theme.dark = false
+  // }
 }
 </script>
 
 <style>
 a.top-title {
-  color: black !important;
+  color: white !important;
   text-decoration: none !important;
 }
 </style>

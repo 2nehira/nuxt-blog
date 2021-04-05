@@ -25,4 +25,4 @@ F Dを飛ばしてE, F に提出，AC しているチームがそれなりにい
 
 全員初参加，水緑茶のチームとしては健闘したのかなーって思います．来年は全員 １ 色上げて戦いたいです．
 
-<img src="/posts/icpc2020-domestic/standings.png"></img>
+<img src="/posts/icpc2020-domestic/standings.png" width="100%" alt="順位表"></img>

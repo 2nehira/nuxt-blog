@@ -81,7 +81,11 @@ export default {
    */
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
+    treeShake: true,
     theme: {
+      options: {
+        customProperties: true
+      },
       dark: false,
       themes: {
         dark: {
@@ -92,6 +96,17 @@ export default {
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
           success: colors.green.accent3
+        },
+        light: {
+          accent: colors.green.darken3,
+          secondary: '#333333',
+          info: colors.teal.lighten1,
+          warning: colors.purple.base,
+          error: colors.deepOrange.accent4,
+          success: colors.green.accent3,
+          background: colors.grey.lighten3,
+          content_background: '#FFFFFF',
+          chip: '#60CAAD'
         }
       }
     }
@@ -101,11 +116,12 @@ export default {
       remarkPlugins: ['remark-math'],
       rehypePlugins: ['rehype-katex'],
       prism: {
-        // theme: 'prism-themes/themes/prism-atom-dark.css'
+        theme: 'prism-themes/themes/prism-atom-dark.css'
         // theme: 'prism-themes/themes/prism-vsc-dark-plus.css'
         // theme: 'prism-themes/themes/prism-dracula.css'
         // theme: 'prism-themes/themes/prism-material-oceanic.css'
         // theme: 'prism-themes/themes/prism-nord.css'
+        // theme: 'prism-themes/themes/prism-material-oceanic.css'
       }
     }
   },

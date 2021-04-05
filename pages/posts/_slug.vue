@@ -1,17 +1,24 @@
 <template>
-  <v-container class="posts">
+  <v-container>
     <breadcrumbs :add-items="addBread" />
-    <h1>{{ post.title }}</h1>
-    <nuxt-content :document="post" />
-    <v-btn v-if="prev" :to="prev.path" nuxt text>&lt;{{ prev.title }}</v-btn>
-    &nbsp;|
-    <v-btn v-if="next" :to="next.path" nuxt text>{{ next.title }}&gt;</v-btn>
+    <div class="posts">
+      <h1 class="posts-title">{{ post.title }}</h1>
+      <div class="date">
+        <v-icon>mdi-calendar-today</v-icon>
+        {{ transformDate(post.date) }}
+      </div>
+      <nuxt-content :document="post" />
+      <v-btn v-if="prev" :to="prev.path" nuxt text>&lt;{{ prev.title }}</v-btn>
+      &nbsp;|
+      <v-btn v-if="next" :to="next.path" nuxt text>{{ next.title }}&gt;</v-btn>
+    </div>
   </v-container>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
 import Prism from 'prismjs'
+import { transformDate } from '@/util/index'
 import breadcrumbs from '@/components/breadcrumbs'
 import 'prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard.js'
 import 'prismjs/components/prism-markdown.min.js'
@@ -53,6 +60,9 @@ export default {
   mounted() {
     Prism.highlightAll()
   },
+  methods: {
+    transformDate
+  },
   head() {
     return {
       title: this.post.title,
@@ -93,11 +103,31 @@ export default {
   background: none;
   box-shadow: none;
 }
+.posts-title {
+  padding: 0% 2% 2%;
+  text-align: center;
+  /* text-align: center; */
+}
+.date {
+  padding: 0% 2% 2%;
+  text-align: center;
+}
 .posts {
-  /* background: #1e1e1e; */
-  /* background: #252525; */
+  background-color: var(--v-content_background-base);
+  padding: 5% 7%;
+  margin: 5% 5%;
+  border-radius: 1%;
 }
 .nuxt-content p {
   white-space: pre-wrap;
+  line-height: 180%;
+}
+
+.nuxt-content h2 {
+  font-size: 20px;
+  padding: 0.1em 0.5em;
+  margin: 0.4em 0;
+  /* border-bottom: solid 2px var(--v-chip-base); */
+  border-left: solid 3px var(--v-chip-base);
 }
 </style>

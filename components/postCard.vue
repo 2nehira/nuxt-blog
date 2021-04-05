@@ -1,6 +1,12 @@
 <template>
   <v-hover v-slot:default="{ hover }">
-    <v-card :to="post.path" :elevation="hover ? 16 : 2" nuxt class="mx-auto">
+    <v-card
+      height="100%"
+      :to="post.path"
+      :elevation="hover ? 16 : 2"
+      nuxt
+      class="mx-auto d-flex flex-column"
+    >
       <v-card-text>
         <v-chip
           :to="{
@@ -8,23 +14,28 @@
             params: { slug: name2category(post.category).slug }
           }"
           nuxt
+          color="secondary"
+          dark
           >{{ post.category }}</v-chip
         >
       </v-card-text>
-      <v-card-title>
+      <v-card-title class="pt-0">
         {{ post.title }}
       </v-card-title>
-      <v-card-text>
-        {{ transformDate(post.date) }}
-      </v-card-text>
-      <v-card-text>
+      <v-spacer />
+      <!-- <v-card-text class="pb-2">
         <v-chip
           v-for="(tag, i) in post.tags"
           :key="i"
           :to="{ name: 'tags-slug', params: { slug: tag } }"
+          color="chip"
+          dark
           >#{{ tag }}</v-chip
         ></v-card-text
-      >
+      > -->
+      <v-card-text class="pt-0">
+        {{ transformDate(post.date) }}
+      </v-card-text>
     </v-card>
   </v-hover>
 </template>
@@ -59,3 +70,5 @@ export default {
   }
 }
 </script>
+
+<style></style>
