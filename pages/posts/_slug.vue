@@ -115,8 +115,17 @@ export default {
 .posts {
   background-color: var(--v-content_background-base);
   padding: 5% 7%;
-  margin: 5% 5%;
+  margin: 0 5%;
   border-radius: 1%;
+}
+@media screen and (max-width: 750px) {
+  .container {
+    margin: 0% 0;
+    padding: 0 0;
+  }
+  .posts {
+    margin: 0 0;
+  }
 }
 .nuxt-content p {
   white-space: pre-wrap;
