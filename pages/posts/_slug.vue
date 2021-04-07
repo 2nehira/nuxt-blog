@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container class="post_page" fluid>
     <breadcrumbs :add-items="addBread" />
     <div class="posts">
       <h1 class="posts-title">{{ post.title }}</h1>
@@ -8,9 +8,11 @@
         {{ transformDate(post.date) }}
       </div>
       <nuxt-content :document="post" />
-      <v-btn v-if="prev" :to="prev.path" nuxt text>&lt;{{ prev.title }}</v-btn>
-      &nbsp;|
-      <v-btn v-if="next" :to="next.path" nuxt text>{{ next.title }}&gt;</v-btn>
+      <div class="prev-next">
+        <NuxtLink v-if="prev" :to="prev.path">&lt;{{ prev.title }}</NuxtLink>
+        |
+        <NuxtLink v-if="next" :to="next.path">{{ next.title }}&gt;</NuxtLink>
+      </div>
     </div>
   </v-container>
 </template>
@@ -128,6 +130,7 @@ export default {
   margin: 0 5%;
   border-radius: 1%;
 }
+
 .nuxt-content p {
   white-space: pre-wrap;
   line-height: 180%;
@@ -137,5 +140,18 @@ export default {
   padding: 0.1em 0.5em;
   margin: 0.4em 0;
   border-left: solid 3px var(--v-chip-base);
+}
+@media screen and (max-width: 600px) {
+  .post_page {
+    margin: 0 0;
+    padding: 0 0;
+  }
+  .posts {
+    margin: 0 0;
+  }
+}
+.prev-next a {
+  color: black;
+  text-decoration: none;
 }
 </style>
