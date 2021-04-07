@@ -128,9 +128,9 @@ export default {
   background-color: var(--v-content_background-base);
   padding: 5% 7%;
   margin: 0 5%;
+  max-width: 800px;
   border-radius: 1%;
 }
-
 .nuxt-content p {
   white-space: pre-wrap;
   line-height: 180%;
