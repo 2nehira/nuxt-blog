@@ -1,0 +1,26 @@
+.nuxt-content .nuxt-content-highlight {
+  position: relative;
+}
+
+.nuxt-content .nuxt-content-highlight .filename {
+  z-index: 100;
+  position: absolute;
+  color: #fff;
+  background: rgba(177, 197, 247, 0.25);
+  right: 0px;
+  top: 0px;
+  margin: 5px;
+  padding: 0px 6px;
+  font-size: 14px;
+  border-radius: 100vh;
+}
+
+.nuxt-content .nuxt-content-highlight > .filename + pre[class*='language-'] {
+  padding-top: 26px;
+}
+
+.nuxt-content pre[class*='language-'] {
+  border-radius: 10px;
+  padding-top: 7px;
+  padding-bottom: 12px;
+}

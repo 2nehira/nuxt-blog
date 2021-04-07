@@ -15,9 +15,10 @@ nuxt 2.13.2
 
 ## plugin を入れる
 @nuxt/content では remark と rehype をつかってMarkdown を変換しています。したがってremark plugin と rehype plugin が使えます。数式を表示するためには remark-math と rehype-katex が必要になります。
+```bash[]
+npm install remark-math rehype-katex 
 ```
-npm install remark-math rehype-katex
-```
+
 そして　@nuxt/content の plugins に登録します。
 
 ``` js[nuxt.config.js]

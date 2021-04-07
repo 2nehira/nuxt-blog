@@ -13,3 +13,13 @@ $material-light: map-merge($material-light, (
 $material-dark: map-merge($material-dark, (
   'background': var(--v-background-base, map-get($material-dark, 'background')) !important,
 ));
+
+// vuetify と prism.js のバッティングを解消(vuetify 無効化)
+// 参考: https://qiita.com/inainainariinainari/items/55e4ed401fa704fa336e
+$code-background-color:initia;
+$code-color:initia;
+
+$code-kbd-border-radius:initia;
+$code-kbd-font-size:90% !default;
+$code-kbd-font-weight:initia;
+$code-padding:initia;

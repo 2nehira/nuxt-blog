@@ -16,6 +16,13 @@
             "source.fixAll.eslint": true
         }
     },
+    "[css]":{
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.codeActionsOnSave": {
+            "source.fixAll.eslint": true
+        }
+    },
     "[markdown]":{
         "editor.tabSize": 2,
     }

@@ -20,8 +20,17 @@ import { mapGetters } from 'vuex'
 import Prism from 'prismjs'
 import { transformDate } from '@/util/index'
 import breadcrumbs from '@/components/breadcrumbs'
-import 'prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard.js'
+import 'prismjs/plugins/normalize-whitespace/prism-normalize-whitespace.min.js'
 import 'prismjs/components/prism-markdown.min.js'
+import 'prismjs/components/prism-yaml.min.js'
+import 'prismjs/components/prism-sql.min.js'
+import 'prismjs/components/prism-python.min.js'
+import 'prismjs/components/prism-json.min.js'
+import 'prismjs/components/prism-go.min.js'
+import 'prismjs/components/prism-docker.min.js'
+// import 'prismjs/components/prism-cpp.min.js'
+import 'prismjs/components/prism-bash.min.js'
+
 export default {
   components: {
     breadcrumbs
@@ -99,6 +108,7 @@ export default {
 }
 </script>
 <style>
+@import '~assets/css/prism-extend.css';
 .v-application code {
   background: none;
   box-shadow: none;
@@ -118,7 +128,7 @@ export default {
   margin: 0 5%;
   border-radius: 1%;
 }
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 600px) {
   .container {
     margin: 0% 0;
     padding: 0 0;
@@ -131,7 +141,6 @@ export default {
   white-space: pre-wrap;
   line-height: 180%;
 }
-
 .nuxt-content h2 {
   font-size: 20px;
   padding: 0.1em 0.5em;
