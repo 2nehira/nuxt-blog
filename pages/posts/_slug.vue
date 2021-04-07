@@ -128,15 +128,6 @@ export default {
   margin: 0 5%;
   border-radius: 1%;
 }
-@media screen and (max-width: 600px) {
-  .container {
-    margin: 0% 0;
-    padding: 0 0;
-  }
-  .posts {
-    margin: 0 0;
-  }
-}
 .nuxt-content p {
   white-space: pre-wrap;
   line-height: 180%;
@@ -145,7 +136,6 @@ export default {
   font-size: 20px;
   padding: 0.1em 0.5em;
   margin: 0.4em 0;
-  /* border-bottom: solid 2px var(--v-chip-base); */
   border-left: solid 3px var(--v-chip-base);
 }
 </style>

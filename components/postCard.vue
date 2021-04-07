@@ -5,7 +5,7 @@
       :to="post.path"
       :elevation="hover ? 16 : 2"
       nuxt
-      class="mx-5 mx-sm-auto mx-md-auto mx-lg-auto mx-xl-auto d-flex flex-column"
+      class="mx-auto d-flex flex-column"
     >
       <v-card-text>
         <v-chip

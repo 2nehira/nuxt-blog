@@ -20,7 +20,7 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar app clipped-right color="secondary" dark>
+    <v-app-bar app color="secondary" dark>
       <v-toolbar-title
         ><nuxt-link class="top-title" to="/">Blog</nuxt-link></v-toolbar-title
       >
