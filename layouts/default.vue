@@ -37,10 +37,8 @@
     </v-app-bar>
 
     <v-main>
-      <v-container class="fill-height" fluid>
-        <v-content>
-          <nuxt />
-        </v-content>
+      <v-container fluid>
+        <nuxt />
       </v-container>
     </v-main>
 

@@ -22,7 +22,8 @@
     "nuxt": "^2.15.4",
     "prism-themes": "^1.4.0",
     "rehype-katex": "^3.0.0",
-    "remark-math": "^2.0.1"
+    "remark-math": "^2.0.1",
+    "vuetify": "^2.4.9"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^2.0.0",
