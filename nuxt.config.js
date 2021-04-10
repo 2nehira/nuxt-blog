@@ -1,6 +1,5 @@
 import colors from 'vuetify/es5/util/colors'
 export default {
-  mode: 'universal',
   target: 'static',
   /*
    ** Headers of the page
@@ -182,27 +181,5 @@ export default {
      */
     extend(config, ctx) {}
   },
-  generate: {
-    async routes() {
-      const { $content } = require('@nuxt/content')
-      const posts = await $content('posts')
-        .only(['path'])
-        .fetch()
-      const postsPath = posts.map((post) => post.path)
-      const categories = await $content('config', 'categories').fetch()
-      const categoryPath = categories.categories.map((category) => category.url)
-      return [...postsPath, ...categoryPath]
-      // return posts.map((post) => post.path)
-      // return Promise.all([
-      //   const {$content} = require('@nuxt/content')
-      //   $content('posts', { deep: true }).fetch()
-      // ]).then(([posts]) => {
-      //   return [
-      //     ...posts.map((post) => {
-      //       return post.path
-      //     })
-      //   ]
-      // })
-    }
-  }
+  generate: {}
 }
