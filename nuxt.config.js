@@ -37,10 +37,10 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      {
-        rel: 'stylesheet',
-        href: 'https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/katex.min.css'
-      },
+      // {
+      //   rel: 'stylesheet',
+      //   href: 'https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/katex.min.css'
+      // },
       { rel: 'alternate', type: 'application/rss+xml', href: '/feed.xml' }
     ]
   },

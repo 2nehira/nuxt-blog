@@ -111,6 +111,7 @@ export default {
 </script>
 <style>
 @import '~assets/css/prism-extend.css';
+@import 'katex/dist/katex.min.css';
 .v-application code {
   background: none;
   box-shadow: none;
