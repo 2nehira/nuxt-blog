@@ -3,7 +3,7 @@
 }
 
 .nuxt-content .nuxt-content-highlight .filename {
-  z-index: 100;
+  z-index: 3;
   position: absolute;
   color: #fff;
   background: rgba(177, 197, 247, 0.25);
